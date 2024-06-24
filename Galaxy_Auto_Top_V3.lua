@@ -3,7 +3,12 @@
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Galaxy5603/MessageAutoTop/main/Message%20TOP", true))()
 
-
+_G.HardTop = false
+_G.AutoWish = true
+_G.Wish = "Zenni" -- Zenni, Exp, Prestige, Levelcap
+_G.RejoinTime = 100
+_G.Invis = false
+_G.Ki = false -- you need a LOT of ki max
 
 -----------------
 
