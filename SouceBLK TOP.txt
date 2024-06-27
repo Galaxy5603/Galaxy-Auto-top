@@ -1,0 +1,884 @@
+Move1 = "Chain Destructo Disk"
+Move2 = "Big Bang Kamehameha"
+Move3 = "Anger Rush"
+Move4 = "Blaster Meteor"
+
+
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Galaxy5603/MessageAutoTop/main/Message%20TOP", true))()
+
+
+
+-----------------
+
+
+
+
+local queue = 3565304751
+local top = 535527772
+local htop = 3552158750
+game:GetService("RunService").Stepped:connect(function()
+    if game.PlaceId ~= queue then
+        if game.PlaceId ~= top then
+            if game.PlaceId ~= htop then
+                game:GetService("TeleportService"):Teleport(queue)
+            end
+        end
+    end
+end)
+if getgenv().AutotopLoaded == true then
+    local StarterGui = game:GetService("StarterGui")
+    StarterGui:SetCore("SendNotification", {
+        Title = "Galaxy AUTO TOP ",
+        Text = "EZ TOP !!!"}
+    )
+    wait(999999999999)
+end
+getgenv().AutotopLoaded = true
+print("Started")
+repeat
+    wait()
+until(game:IsLoaded())
+repeat
+    wait()
+until(game.Players.LocalPlayer.Character)
+if _G.Wish == "Zenni" or _G.Wish == "zenni" then
+    _G.Wish = "100k Zenni"
+end
+if _G.Wish == "Exp" or _G.Wish == "exp" then
+    _G.Wish = "More EXP"
+end
+if _G.Wish == "prestige" then
+    _G.Wish = "Prestige"
+end
+if _G.Wish == "Levelcap" or _G.Wish == "levelcap" then
+    _G.Wish = "Level Cap"
+end
+
+-- variables
+local run = game:GetService("RunService")
+local plr = game:GetService("Players").LocalPlayer
+local cam = game.workspace.CurrentCamera
+local StarterGui = game:GetService("StarterGui")
+local filename = "Highscore.txt"
+local HttpService = game:GetService("HttpService")
+local json
+_G.stop = false
+_G.go = true
+local mobs = {
+    [1] = "Ribrianne",
+    [2] = "Maji Kayo",
+    [3] = "Kale",
+    [4] = "Caulifla",
+    [5] = "Toppo",
+    [6] = "Goku",
+    [7] = "Cabba",
+    [8] = "Vegeta",
+    [9] = "Kefla",
+    [10] = "Sorrel",
+    [11] = "Caway",
+    [12] = "Murichim",
+    [13] = "Rabanra",
+    [14] = "Paparoni",
+    [15] = "Shantza",
+    [16] = "Napapa",
+    [17] = "Methiop",
+    [18] = "Zarbuto",
+    [19] = "Katopesla",
+    [20] = "Prum",
+    [21] = "Vuon",
+    [22] = "Ganos",
+    [23] = "Roselle",
+    [24] = "Roshi",
+    [25] = "Cocotte",
+    [26] = "The Preecho",
+    [27] = "Tien Shinhan",
+    [28] = "Lavender",
+    [29] = "Kahseral",
+    [30] = "Piccolo",
+    [31] = "Bergamo",
+    [32] = "Damon",
+    [33] = "Android 18 FP",
+    [34] = "Android 17 FP",
+    [35] = "Murisam",
+    [36] = "Krillin",
+    [37] = "Frost",
+    [38] = "Dyspo",
+    [39] = "Golden Frieza",
+    [40] = "Hit",
+    [41] = "Gohan",
+}
+local padtop = {
+    [1] = CFrame.new(-68.6410828, 235.859634, 36.1600113),
+    [2] = CFrame.new(-68.6410828, 235.859634, 221.160004),
+    [3] = CFrame.new(-68.6410828, 235.859634, 668.160034),
+    [4] = CFrame.new(-68.6410828, 235.859634, 391.160004),
+    [5] = CFrame.new(-68.6410828, 235.859634, 306.160004),
+    [6] = CFrame.new(-68.6410828, 235.859634, 483.160004),
+    [7] = CFrame.new(-68.6410828, 235.859634, 135.160004),
+    [8] = CFrame.new(-68.6410828, 235.859634, 570.160034),
+}
+local padhtop = {
+    [1] = CFrame.new(-9.36930752, 235.859604, 139.186035),
+    [2] = CFrame.new(-9.36930752, 235.859604, 225.186035),
+    [3] = CFrame.new(-13.1093254, 235.859604, 574.186035),
+    [4] = CFrame.new(-9.36930752, 235.859604, 40.186039),
+    [5] = CFrame.new(-9.36930752, 235.859604, 310.186035),
+    [6] = CFrame.new(-9.36930752, 235.859604, 395.186035),
+    [7] = CFrame.new(-9.36930752, 235.859604, 487.186035),
+    [8] = CFrame.new(-9.36930752, 235.859604, 672.186035),
+}
+
+-- functions
+local function tp(id)
+    game:GetService("TeleportService"):Teleport(id)
+end
+
+local function distance(v1, v2)
+    return(v1 - v2).Magnitude
+end
+
+local function twn(char, time, coords)
+    game:GetService("TweenService"):Create(char, TweenInfo.new(time, Enum.EasingStyle.Quad),{CFrame = coords}):Play()
+end
+
+local function form()
+    if not plr.Character.UpperTorso:FindFirstChild("Ui1") or not plr.Character.UpperTorso:FindFirstChild("Ui2") or not plr.Character.UpperTorso:FindFirstChild("Ui3") then
+        if plr.Character.Race.Value ~= "Android" then
+            plr.Backpack.ServerTraits.Input:FireServer({[1] = "x"},CFrame.new(0,0,0),InputObject)
+            wait(3.5)
+            plr.Backpack.ServerTraits.Transform:FireServer("h")
+            wait(.5)
+            plr.Backpack.ServerTraits.Input:FireServer({[1] = "xoff"},CFrame.new(0,0,0),InputObject)
+        else
+            coroutine.wrap(function()
+                wait(2)
+                plr.Backpack.ServerTraits.Transform:FireServer("g")
+            end){}
+        end
+    end
+end
+
+-- fancy gui
+coroutine.wrap(function()
+    repeat
+        wait()
+    until(plr.PlayerGui)
+    repeat
+        wait()
+    until(plr.PlayerGui:FindFirstChild("HUD"))
+    repeat
+        wait()
+    until(plr.PlayerGui.HUD:FindFirstChild("FullSize"))
+    run.Stepped:connect(function()
+        plr.PlayerGui.HUD.FullSize.Ki.Bar.BackgroundColor3 = Color3.fromRGB(6, 6, 6)
+        plr.PlayerGui.HUD.FullSize.Ki.Bar.Shadow.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+        if game.PlaceId ~= queue then
+            plr.PlayerGui.HUD.FullSize.Money.Text = "TEAM BLK"
+        end
+        plr.PlayerGui.HUD.FullSize.Quests.Visible = true
+        plr.PlayerGui.HUD.FullSize.Quests.TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
+        plr.PlayerGui.HUD.Bottom.SP.Visible = true
+        plr.PlayerGui.HUD.Bottom.SP.TextColor3 = Color3.fromRGB(0, 0, 0)
+        plr.PlayerGui.HUD.Bottom.SP.BackgroundTransparency = 0
+    end)
+end){}
+
+-- antikick ( also for wish tp )
+coroutine.wrap(function()
+    game:WaitForChild("CoreGui")
+    game:GetService("CoreGui"):WaitForChild("RobloxPromptGui")
+    game:GetService("CoreGui").RobloxPromptGui:WaitForChild("promptOverlay")
+    run.Stepped:connect(function()
+        if game:GetService("CoreGui").RobloxPromptGui.promptOverlay:FindFirstChild("ErrorPrompt") then
+            tp(queue)
+        end
+    end)
+end){}
+
+-- queue part
+if game.PlaceId == queue then
+    coroutine.wrap(function()
+        wait(25)
+        tp(queue)
+    end){}
+    repeat
+        wait()
+    until(plr.Character:FindFirstChild("Block"))
+    ---------------------- from infinite yield hub, ain't mine ----------------------
+    game:GetService("Lighting").Brightness = 2
+	game:GetService("Lighting").ClockTime = 14
+	game:GetService("Lighting").FogEnd = 100000
+	game:GetService("Lighting").GlobalShadows = false
+	game:GetService("Lighting").OutdoorAmbient = Color3.fromRGB(0, 0, 0)
+    -------------------------------------------------------------------------
+        game.RunService.Stepped:connect(function()
+            cam.CameraType = "Scriptable"
+            twn(cam, 1, CFrame.new(-4.29845095, 791.830017, 545.404907, 0.999998271, -0.00185857562, 0.000329000934, -0, 0.174307883, 0.984691203, -0.00188747048, -0.984689474, 0.174307555))
+        end)
+    StarterGui:SetCore("SendNotification", {
+        Title = "Hypersomnia, in queue",
+        Text = "Going in top."}
+    )
+    if plr.Character:FindFirstChild("PowerOutput") then
+        plr.Character.PowerOutput:Destroy()
+    end
+    if _G.Invis == true then
+        twn(plr.Character.HumanoidRootPart, 0, CFrame.new(-2636.90747, 237.999954, 2147.57812, 0.635280132, 0, -0.772281766, -0, 1, -0, 0.772281885, 0, 0.635280073))
+        wait(.3)
+        plr.Character.RightLowerLeg:Destroy()
+        plr.Character.LeftLowerLeg:Destroy()
+        plr.Character.RightFoot:Destroy()
+        plr.Character.LeftFoot:Destroy()
+        plr.Character.LowerTorso:Destroy()
+        plr.Character.RightUpperLeg:Destroy()
+        plr.Character.LeftUpperLeg:Destroy()
+        wait(.3)
+    end
+    twn(plr.Character.HumanoidRootPart, .1, CFrame.new(-16.2122517, 482.373505, 361.69046, 0.999200583, 0, 0.0399781577, -0, 1.00000012, -0, -0.0399781577, 0, 0.999200583))
+    wait(.1)
+    local random = math.random(1,8)
+    run.Stepped:connect(function()
+        if _G.HardTop == true then
+            twn(plr.Character.HumanoidRootPart, 0, padhtop[random])
+        else
+            twn(plr.Character.HumanoidRootPart, 0, padtop[random])
+        end
+    end)
+    local BillboardGui = Instance.new("BillboardGui")
+    local TextLabel = Instance.new("TextLabel")
+    local BillboardGui_2 = Instance.new("BillboardGui")
+    local TextLabel_2 = Instance.new("TextLabel")
+    BillboardGui.Parent = plr.Character.HumanoidRootPart
+    BillboardGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    BillboardGui.Active = true
+    BillboardGui.AlwaysOnTop = true
+    BillboardGui.LightInfluence = 1.000
+    BillboardGui.Size = UDim2.new(0, 200, 0, 50)
+    BillboardGui.StudsOffset = Vector3.new(0, 10, 0)
+    TextLabel.Parent = BillboardGui
+    TextLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel.BackgroundTransparency = 1.000
+    TextLabel.Size = UDim2.new(1, 0, 1, 0)
+    TextLabel.Font = Enum.Font.SourceSans
+    TextLabel.Text = "You are here"
+    TextLabel.TextColor3 = Color3.fromRGB(255, 0, 0)
+    TextLabel.TextSize = 20
+    BillboardGui_2.Parent = plr.Character.HumanoidRootPart
+    BillboardGui_2.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    BillboardGui_2.Active = true
+    BillboardGui_2.AlwaysOnTop = true
+    BillboardGui_2.LightInfluence = 1.000
+    BillboardGui_2.Size = UDim2.new(0, 200, 0, 50)
+    BillboardGui_2.StudsOffset = Vector3.new(0, 5, 0)
+    TextLabel_2.Parent = BillboardGui_2
+    TextLabel_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+    TextLabel_2.BackgroundTransparency = 1.000
+    TextLabel_2.Size = UDim2.new(1, 0, 1, 0)
+    TextLabel_2.Font = Enum.Font.SourceSans
+    TextLabel_2.Text = "v"
+    TextLabel_2.TextColor3 = Color3.fromRGB(255, 0, 0)
+    TextLabel_2.TextSize = 20
+end
+
+-- top part
+if game.PlaceId == top or game.PlaceId == htop then
+    coroutine.wrap(function()
+        repeat
+            wait()
+        until(_G.idk == true)
+        wait(_G.RejoinTime)
+        print("rejoining")
+        tp(queue)
+    end){}
+    repeat
+        wait()
+    until(plr.Character:FindFirstChild("Block"))
+    StarterGui:SetCore("SendNotification", {
+        Title = "BLK_Galaxy ",
+        Text = "EZZ BY PASS"}
+    )
+    ---------------------- from infinite yield hub, ain't mine -----------------------------
+if Shaders == true then
+local Bloom = Instance.new("BloomEffect")
+Bloom.Intensity = 0.1
+Bloom.Threshold = 0
+Bloom.Size = 100
+
+local Tropic = Instance.new("Sky")
+Tropic.Name = "Tropic"
+Tropic.SkyboxUp = "http://www.roblox.com/asset/?id=169210149"
+Tropic.SkyboxLf = "http://www.roblox.com/asset/?id=169210133"
+Tropic.SkyboxBk = "http://www.roblox.com/asset/?id=169210090"
+Tropic.SkyboxFt = "http://www.roblox.com/asset/?id=169210121"
+Tropic.StarCount = 100
+Tropic.SkyboxDn = "http://www.roblox.com/asset/?id=169210108"
+Tropic.SkyboxRt = "http://www.roblox.com/asset/?id=169210143"
+Tropic.Parent = Bloom
+
+local Sky = Instance.new("Sky")
+Sky.SkyboxUp = "http://www.roblox.com/asset/?id=196263782"
+Sky.SkyboxLf = "http://www.roblox.com/asset/?id=196263721"
+Sky.SkyboxBk = "http://www.roblox.com/asset/?id=196263721"
+Sky.SkyboxFt = "http://www.roblox.com/asset/?id=196263721"
+Sky.CelestialBodiesShown = false
+Sky.SkyboxDn = "http://www.roblox.com/asset/?id=196263643"
+Sky.SkyboxRt = "http://www.roblox.com/asset/?id=196263721"
+Sky.Parent = Bloom
+
+Bloom.Parent = game:GetService("Lighting")
+
+local Bloom = Instance.new("BloomEffect")
+Bloom.Enabled = false
+Bloom.Intensity = 0.35
+Bloom.Threshold = 0.2
+Bloom.Size = 56
+
+local Tropic = Instance.new("Sky")
+Tropic.Name = "Tropic"
+Tropic.SkyboxUp = "http://www.roblox.com/asset/?id=169210149"
+Tropic.SkyboxLf = "http://www.roblox.com/asset/?id=169210133"
+Tropic.SkyboxBk = "http://www.roblox.com/asset/?id=169210090"
+Tropic.SkyboxFt = "http://www.roblox.com/asset/?id=169210121"
+Tropic.StarCount = 100
+Tropic.SkyboxDn = "http://www.roblox.com/asset/?id=169210108"
+Tropic.SkyboxRt = "http://www.roblox.com/asset/?id=169210143"
+Tropic.Parent = Bloom
+
+local Sky = Instance.new("Sky")
+Sky.SkyboxUp = "http://www.roblox.com/asset/?id=196263782"
+Sky.SkyboxLf = "http://www.roblox.com/asset/?id=196263721"
+Sky.SkyboxBk = "http://www.roblox.com/asset/?id=196263721"
+Sky.SkyboxFt = "http://www.roblox.com/asset/?id=196263721"
+Sky.CelestialBodiesShown = false
+Sky.SkyboxDn = "http://www.roblox.com/asset/?id=196263643"
+Sky.SkyboxRt = "http://www.roblox.com/asset/?id=196263721"
+Sky.Parent = Bloom
+Bloom.Parent = game:GetService("Lighting")
+local Blur = Instance.new("BlurEffect")
+Blur.Size = 2
+
+Blur.Parent = game:GetService("Lighting")
+local Efecto = Instance.new("BlurEffect")
+Efecto.Name = "Efecto"
+Efecto.Enabled = false
+Efecto.Size = 2
+
+Efecto.Parent = game:GetService("Lighting")
+local Inaritaisha = Instance.new("ColorCorrectionEffect")
+Inaritaisha.Name = "Inari taisha"
+Inaritaisha.Saturation = 0.05
+Inaritaisha.TintColor = Color3.fromRGB(255, 224, 219)
+
+Inaritaisha.Parent = game:GetService("Lighting")
+local Normal = Instance.new("ColorCorrectionEffect")
+Normal.Name = "Normal"
+Normal.Enabled = false
+Normal.Saturation = -0.2
+Normal.TintColor = Color3.fromRGB(255, 232, 215)
+
+Normal.Parent = game:GetService("Lighting")
+local SunRays = Instance.new("SunRaysEffect")
+SunRays.Intensity = 0.05
+
+SunRays.Parent = game:GetService("Lighting")
+local Sunset = Instance.new("Sky")
+Sunset.Name = "Sunset"
+Sunset.SkyboxUp = "rbxassetid://323493360"
+Sunset.SkyboxLf = "rbxassetid://323494252"
+Sunset.SkyboxBk = "rbxassetid://323494035"
+Sunset.SkyboxFt = "rbxassetid://323494130"
+Sunset.SkyboxDn = "rbxassetid://323494368"
+Sunset.SunAngularSize = 14
+Sunset.SkyboxRt = "rbxassetid://323494067"
+
+Sunset.Parent = game:GetService("Lighting")
+local Takayama = Instance.new("ColorCorrectionEffect")
+Takayama.Name = "Takayama"
+Takayama.Enabled = false
+Takayama.Saturation = -0.3
+Takayama.Contrast = 0.1
+Takayama.TintColor = Color3.fromRGB(235, 214, 204)
+
+Takayama.Parent = game:GetService("Lighting")
+local L = game:GetService("Lighting")
+L.Brightness = 2.14
+L.ColorShift_Bottom = Color3.fromRGB(11, 0, 20)
+L.ColorShift_Top = Color3.fromRGB(240, 127, 14)
+L.OutdoorAmbient = Color3.fromRGB(34, 0, 49)
+L.ClockTime = 6.7
+L.FogColor = Color3.fromRGB(94, 76, 106)
+L.FogEnd = 1000
+L.FogStart = 0
+L.ExposureCompensation = 0.24
+L.ShadowSoftness = 0
+L.Ambient = Color3.fromRGB(59, 33, 27)
+
+local Bloom = Instance.new("BloomEffect")
+Bloom.Intensity = 0.1
+Bloom.Threshold = 0
+Bloom.Size = 100
+
+local Tropic = Instance.new("Sky")
+Tropic.Name = "Tropic"
+Tropic.SkyboxUp = "http://www.roblox.com/asset/?id=169210149"
+Tropic.SkyboxLf = "http://www.roblox.com/asset/?id=169210133"
+Tropic.SkyboxBk = "http://www.roblox.com/asset/?id=169210090"
+Tropic.SkyboxFt = "http://www.roblox.com/asset/?id=169210121"
+Tropic.StarCount = 100
+Tropic.SkyboxDn = "http://www.roblox.com/asset/?id=169210108"
+Tropic.SkyboxRt = "http://www.roblox.com/asset/?id=169210143"
+Tropic.Parent = Bloom
+
+local Sky = Instance.new("Sky")
+Sky.SkyboxUp = "http://www.roblox.com/asset/?id=196263782"
+Sky.SkyboxLf = "http://www.roblox.com/asset/?id=196263721"
+Sky.SkyboxBk = "http://www.roblox.com/asset/?id=196263721"
+Sky.SkyboxFt = "http://www.roblox.com/asset/?id=196263721"
+Sky.CelestialBodiesShown = false
+Sky.SkyboxDn = "http://www.roblox.com/asset/?id=196263643"
+Sky.SkyboxRt = "http://www.roblox.com/asset/?id=196263721"
+Sky.Parent = Bloom
+
+Bloom.Parent = game:GetService("Lighting")
+
+local Bloom = Instance.new("BloomEffect")
+Bloom.Enabled = false
+Bloom.Intensity = 0.35
+Bloom.Threshold = 0.2
+Bloom.Size = 56
+
+local Tropic = Instance.new("Sky")
+Tropic.Name = "Tropic"
+Tropic.SkyboxUp = "http://www.roblox.com/asset/?id=169210149"
+Tropic.SkyboxLf = "http://www.roblox.com/asset/?id=169210133"
+Tropic.SkyboxBk = "http://www.roblox.com/asset/?id=169210090"
+Tropic.SkyboxFt = "http://www.roblox.com/asset/?id=169210121"
+Tropic.StarCount = 100
+Tropic.SkyboxDn = "http://www.roblox.com/asset/?id=169210108"
+Tropic.SkyboxRt = "http://www.roblox.com/asset/?id=169210143"
+Tropic.Parent = Bloom
+
+local Sky = Instance.new("Sky")
+Sky.SkyboxUp = "http://www.roblox.com/asset/?id=196263782"
+Sky.SkyboxLf = "http://www.roblox.com/asset/?id=196263721"
+Sky.SkyboxBk = "http://www.roblox.com/asset/?id=196263721"
+Sky.SkyboxFt = "http://www.roblox.com/asset/?id=196263721"
+Sky.CelestialBodiesShown = false
+Sky.SkyboxDn = "http://www.roblox.com/asset/?id=196263643"
+Sky.SkyboxRt = "http://www.roblox.com/asset/?id=196263721"
+Sky.Parent = Bloom
+
+Bloom.Parent = game:GetService("Lighting")
+local Blur = Instance.new("BlurEffect")
+Blur.Size = 2
+
+Blur.Parent = game:GetService("Lighting")
+local Efecto = Instance.new("BlurEffect")
+Efecto.Name = "Efecto"
+Efecto.Enabled = false
+Efecto.Size = 2
+
+Efecto.Parent = game:GetService("Lighting")
+local Inaritaisha = Instance.new("ColorCorrectionEffect")
+Inaritaisha.Name = "Inari taisha"
+Inaritaisha.Saturation = 0.05
+Inaritaisha.TintColor = Color3.fromRGB(255, 224, 219)
+
+Inaritaisha.Parent = game:GetService("Lighting")
+local Normal = Instance.new("ColorCorrectionEffect")
+Normal.Name = "Normal"
+Normal.Enabled = false
+Normal.Saturation = -0.2
+Normal.TintColor = Color3.fromRGB(255, 232, 215)
+
+Normal.Parent = game:GetService("Lighting")
+local SunRays = Instance.new("SunRaysEffect")
+SunRays.Intensity = 0.05
+
+SunRays.Parent = game:GetService("Lighting")
+local Sunset = Instance.new("Sky")
+Sunset.Name = "Sunset"
+Sunset.SkyboxUp = "rbxassetid://323493360"
+Sunset.SkyboxLf = "rbxassetid://323494252"
+Sunset.SkyboxBk = "rbxassetid://323494035"
+Sunset.SkyboxFt = "rbxassetid://323494130"
+Sunset.SkyboxDn = "rbxassetid://323494368"
+Sunset.SunAngularSize = 14
+Sunset.SkyboxRt = "rbxassetid://323494067"
+
+Sunset.Parent = game:GetService("Lighting")
+local Takayama = Instance.new("ColorCorrectionEffect")
+Takayama.Name = "Takayama"
+Takayama.Enabled = false
+Takayama.Saturation = -0.3
+Takayama.Contrast = 0.1
+Takayama.TintColor = Color3.fromRGB(235, 214, 204)
+
+Takayama.Parent = game:GetService("Lighting")
+local L = game:GetService("Lighting")
+L.Brightness = 2.14
+L.ColorShift_Bottom = Color3.fromRGB(11, 0, 20)
+L.ColorShift_Top = Color3.fromRGB(240, 127, 14)
+L.OutdoorAmbient = Color3.fromRGB(34, 0, 49)
+L.ClockTime = 6.7
+L.FogColor = Color3.fromRGB(94, 76, 106)
+L.FogEnd = 1000
+L.FogStart = 0
+L.ExposureCompensation = 0.24
+L.ShadowSoftness = 0
+L.Ambient = Color3.fromRGB(59, 33, 27)
+
+game.Lighting.Ambient = Color3.fromRGB(0, 0, 0)
+game.Lighting.Brightness = 1
+game.Lighting.ClockTime = 14
+game.Lighting.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+game.Lighting.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+game.Lighting.ExposureCompensation = 0
+game.Lighting.FogColor = Color3.fromRGB(0, 0, 0)
+game.Lighting.FogEnd = 999999999
+game.Lighting.GeographicLatitude = 41.733
+game.Lighting.OutdoorAmbient = Color3.fromRGB(0, 0, 0)
+game.Lighting.GlobalShadows = true
+game.Lighting.Changed:Connect(function()
+game.Lighting.Ambient = Color3.fromRGB(0, 0, 0)
+game.Lighting.Brightness = 1
+game.Lighting.ClockTime = 14
+game.Lighting.ColorShift_Bottom = Color3.fromRGB(0, 0, 0)
+game.Lighting.ColorShift_Top = Color3.fromRGB(0, 0, 0)
+game.Lighting.ExposureCompensation = 0
+game.Lighting.FogColor = Color3.fromRGB(0, 0, 0)
+game.Lighting.FogEnd = 999999999
+game.Lighting.GeographicLatitude = 41.733
+game.Lighting.OutdoorAmbient = Color3.fromRGB(0, 0, 0)
+game.Lighting.GlobalShadows = true
+end)
+game.Lighting.DescendantAdded:Connect(function(obj)
+if obj:IsA("") or obj:IsA("Sky") or obj:IsA("BlurEffect") or obj:IsA("BloomEffect") or obj:IsA("SunRaysEffect") then
+obj:Destroy()
+end
+end)
+end
+    -------------------------------------------------------------------------
+
+    coroutine.wrap(function()
+        while wait() do
+            if plr.Character.Humanoid.Health <= 1 then
+                wait(1)
+                form()
+            end
+        end
+    end){}
+
+    form()
+
+    local oldki = plr.Character.Ki.Value
+coroutine.wrap(function()
+    while wait() do
+        for i, v in ipairs(game.Players:GetChildren()) do
+            if v.Name ~= plr.Name then
+                if plr.Character.Ki.Value <= oldki * 0.1 then
+                    if plr.Character.Humanoid.Health <= plr.Character.Humanoid.MaxHealth * 0.2 then
+                        plr.Backpack.ServerTraits.Transform:FireServer("g")
+                    else
+                        game.ReplicatedStorage.ResetChar:FireServer()
+                    end
+                    wait(.1)
+                    plr.Backpack.ServerTraits.Transform:FireServer("g")
+                end
+            end
+        end
+    end
+end){}
+    coroutine.wrap(function()
+        _G.timer = 0
+        _G.idk = true
+        while wait(1) do
+            _G.timer = _G.timer + 1
+        end
+    end){}
+
+    run.Stepped:connect(function()
+        plr.PlayerGui.HUD.Bottom.SP.Text = "Time : ".._G.timer.." / ".._G.RejoinTime
+    end)
+
+    -- highscore thing
+    coroutine.wrap(function()
+        while wait() do
+            if game.workspace.Live:FindFirstChild("Jiren") then
+                if game.workspace.Live.Jiren:FindFirstChild("Humanoid") then
+                    wait(.5)
+                    if game.workspace.Live:FindFirstChild("Jiren") then
+                        if game.workspace.Live.Jiren.Humanoid.Health <= 0 then
+                            if isfile(filename) then
+                                local Highscore = HttpService:JSONDecode(readfile(filename))
+                                if tonumber(Highscore) > _G.timer then
+                                    local diff = tonumber(Highscore) - _G.timer
+                                    local message = Instance.new("Message", game.CoreGui)
+                                    message.Text = "New best time : ".._G.timer.."! it's "..diff.." LAST RECORD ".. Highscore
+                                    json = HttpService:JSONEncode(_G.timer)
+                                    writefile(filename, json)
+                                end
+                            else
+                                if (writefile)then
+                                    json = HttpService:JSONEncode(_G.timer)
+                                    writefile(filename, json)
+                                    local message = Instance.new("Message", game.CoreGui)
+                                    message.Text = "YOU TIME : ".._G.timer..",  NEXT TIME"
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end){}
+
+    coroutine.wrap(function()
+        while wait() do
+            if plr.Character.Humanoid.Health <= 1 then
+                wait(6)
+            end
+            if game.workspace.Live:FindFirstChild("Jiren") then
+                if game.workspace.Live.Jiren:FindFirstChild("Humanoid") then
+                    if game.workspace.Live.Jiren.Humanoid.Health <= 0 then
+                        break
+                    end
+                end
+            end
+            if _G.Ki == true then
+                Move10 = "Chain Destructo Disk"
+                Move11 = "Super Volley"
+                Move12 = "Sudden Storm"
+                Move13 = "Justice Flash"
+                Move14 = "Finish Breaker"
+                Move15 = "Blaster Meteor"
+                Move16 = "Explosive Grip"
+                Move17 = "Unrelenting Volley"
+                Move18 = "Hellzone Grenade"
+                Move19 = "Crusher Ball"
+                Move20 = "Genocide Shell"
+                Move21 = "Divine Lasso"
+            end
+            if _G.go == false then
+                break
+            end
+            for i, v in pairs(plr.Backpack:GetChildren()) do
+                if  v.Name == Move1 or v.Name == Move2 or v.Name == Move3 or v.Name == Move4 or v.Name == Move5 or v.Name == Move6 or v.Name == Move7 or v.Name == Move8 or v.Name == Move9 or v.Name == Move10 or v.Name == Move11 or v.Name == Move12 or v.Name == Move13 or v.Name == Move14 or v.Name == Move15 or v.Name == Move16 or v.Name == Move17 or v.Name == Move18 or v.Name == Move19 or v.Name == Move20 or v.Name == Move21 then
+                    v.Parent = plr.Character
+                    v:Activate()
+                    wait()
+                    v:Deactivate()
+                    wait()
+                    v.Parent = plr.Backpack
+                    plr.Backpack.ServerTraits.EatSenzu:FireServer("")
+                end
+            end
+        end
+    end){}
+
+    -- this is here so the character doesn't loop fall when he isn't flying, makes the autotop better, faster, smoother and nicer to look att
+    local part = Instance.new("Part", game.workspace)
+    run.Stepped:connect(function()
+        part.Position = plr.Character.HumanoidRootPart.CFrame * Vector3.new(0, -3, 0)
+    end)
+    part.Anchored = true
+    part.Transparency = 1
+
+    run.Stepped:connect(function()
+        if plr.Character:FindFirstChild("SuperAction") then
+            plr.Character.SuperAction:Destroy()
+        end
+        for i, v in pairs(plr.Character:GetDescendants()) do
+            if v.Name == "Block" then
+                v.Value = false
+            end
+            if v.Name == "Action" or v.Name == "Activity" or v.Name == "Attacking" or v.Name == "Using" or v.Name == "hyper" or v.Name == "Hyper" or v.Name == "KiBlasted" or v.Name == "heavy" or v.Name == "NotHardBack" or v.Name == "Tele" or v.Name == "Blocked" or v.Name == "tele" or v.Name == "Killed" or v.Name == "Slow" then
+                v:Destroy()
+            end
+        end
+    end)
+
+    coroutine.wrap(function()
+        while wait() do
+            if game.workspace.Live:FindFirstChild("Jiren") then
+                _G.go = false
+                coroutine.wrap(function()
+                    wait(2)
+                    while wait() do
+                        if not game.workspace.Live:FindFirstChild("Jiren") or game.workspace.Live.Jiren.Humanoid.Health <= 0 then
+                            cam.CameraType = "Custom"
+                            if part then
+                                part:Destroy()
+                            end
+                            wait(5)
+                            plr.PlayerGui.HUD.FullSize.Quests.TextLabel.Text = "Finished"
+                            if _G.AutoWish then
+                                local args = {[1] = workspace.FriendlyNPCs:FindFirstChild("Zenoh-sama")}
+                                game:GetService("Players").LocalPlayer.Backpack.ServerTraits.ChatStart:FireServer(unpack(args))
+                                wait(.3)
+                                local args = {[1] = {[1] = "k"}}
+                                game:GetService("Players").LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack(args))
+                                wait(.3)
+                                local args = {[1] = {[1] = _G.Wish}}
+                                game:GetService("Players").LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack(args))
+                                wait(.3)
+                                local args = {[1] = {[1] = "k"}}
+                                game:GetService("Players").LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack(args))
+                                wait(.3)
+                                local args = {[1] = {[1] = "Yes"}}
+                                game:GetService("Players").LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer(unpack(args))
+                                wait(.3)
+                            end
+                        end
+                    end
+                end){}
+                if game.workspace.Live.Jiren:FindFirstChild("Humanoid") and game.workspace.Live.Jiren:FindFirstChild("HumanoidRootPart") then
+                    local jiren = game.workspace.Live.Jiren
+                    if jiren.Humanoid.Health > 0 then
+                        plr.PlayerGui.HUD.FullSize.Quests.TextLabel.Text = "Jiren"
+                        local vardist = distance(plr.Character.HumanoidRootPart.Position, jiren.HumanoidRootPart.Position)
+                        repeat
+                            if vardist < 300 then
+                                break
+                            end
+                            twn(plr.Character.HumanoidRootPart, vardist/10000, jiren.HumanoidRootPart.CFrame)
+                            wait(vardist/10000)
+                        until(distance(plr.Character.HumanoidRootPart.Position, jiren.HumanoidRootPart.Position) <= 200)
+                        coroutine.wrap(function()
+                            while wait() do
+                                if not game.workspace.Live:FindFirstChild("Jiren") or jiren.Humanoid.Health <= 0 then
+                                    break
+                                end
+                                if plr.Character.Humanoid.Health <= 1 then
+                                    wait(5)
+                                end
+                                game.Workspace.CurrentCamera.CFrame = CFrame.new(plr.Character.HumanoidRootPart.Position, Vector3.new(jiren.HumanoidRootPart.Position.X, plr.Character.HumanoidRootPart.Position.Y, jiren.HumanoidRootPart.Position.Z)) * CFrame.new(0, 2, 10)
+                                plr.Character.HumanoidRootPart.CFrame = jiren.HumanoidRootPart.CFrame * CFrame.new(0, 0, 3)
+                            end
+                        end){}
+                        if _G.Ki == false then
+                            pcall(function()
+                                if plr.Character:FindFirstChild("Dragon Crush") then
+                                    if plr.Character["Dragon Crush"].Activator:FindFirstChild("Flip") then
+                                        plr.Character["Dragon Crush"].Activator.Flip:Destroy()
+                                        wait(.1)
+                                    end
+                                    plr.Character["Dragon Crush"]:Activate()
+                                elseif plr.Backpack:FindFirstChild("Dragon Crush") then
+                                    plr.Character.Humanoid:EquipTool(plr.Backpack["Dragon Crush"])
+                                    wait(.1)
+                                    if plr.Character["Dragon Crush"].Activator:FindFirstChild("Flip") then
+                                        plr.Character["Dragon Crush"].Activator.Flip:Destroy()
+                                        wait(.1)
+                                    end
+                                    plr.Character["Dragon Crush"]:Activate()
+                                end
+                            end)
+
+                            while wait() do
+                                if not game.workspace.Live:FindFirstChild("Jiren") or jiren.Humanoid.Health <= 0 then
+                                    break
+                                end
+                                for i, v in pairs(plr.Backpack:GetChildren()) do
+                                    if  v.Name == Move1 or v.Name == Move2 or v.Name == Move3 or v.Name == Move4 or v.Name == Move5 or v.Name == Move6 or v.Name == Move7 or v.Name == Move8 or v.Name == Move9 or v.Name == Move10 or v.Name == Move11 or v.Name == Move12 or v.Name == Move13 or v.Name == Move14 or v.Name == Move15 or v.Name == Move16 or v.Name == Move17 or v.Name == Move18 or v.Name == Move19 or v.Name == Move20 or v.Name == Move21 then
+                                        v.Parent = plr.Character
+                                        v:Activate()
+                                        wait()
+                                        v:Deactivate()
+                                        wait()
+                                        v.Parent = plr.Backpack
+                                        plr.Backpack.ServerTraits.EatSenzu:FireServer("")
+                                    end
+                                end
+                            end
+                        else
+                            coroutine.wrap(function()
+                                while wait() do
+                                    if not game.workspace.Live:FindFirstChild(jiren.Name) then
+                                        break
+                                    end
+                                    for idk, kimove in ipairs(game.workspace:GetChildren()) do
+                                        if kimove:FindFirstChild("Ki") and kimove:FindFirstChild("Mesh") then
+                                            kimove.CFrame = jiren.HumanoidRootPart.CFrame
+                                        end
+                                    end
+                                    for idk, kimove in ipairs(plr.Character:GetChildren()) do
+                                        if kimove:FindFirstChild("Ki") and kimove:FindFirstChild("Mesh") then
+                                            kimove.CFrame = jiren.HumanoidRootPart.CFrame
+                                        end
+                                    end
+                                end
+                            end){}
+                            while wait() do
+                                if not game.workspace.Live:FindFirstChild("Jiren") or jiren.Humanoid.Health <= 0 then
+                                    break
+                                end
+                                for i, v in pairs(plr.Backpack:GetChildren()) do
+                                    if  v.Name == Move1 or v.Name == Move2 or v.Name == Move3 or v.Name == Move4 or v.Name == Move5 or v.Name == Move6 or v.Name == Move7 or v.Name == Move8 or v.Name == Move9 or v.Name == Move10 or v.Name == Move11 or v.Name == Move12 or v.Name == Move13 or v.Name == Move14 or v.Name == Move15 or v.Name == Move16 or v.Name == Move17 or v.Name == Move18 or v.Name == Move19 or v.Name == Move20 or v.Name == Move21 then
+                                        v.Parent = plr.Character
+                                        v:Activate()
+                                        wait()
+                                        v:Deactivate()
+                                        wait()
+                                        v.Parent = plr.Backpack
+                                        plr.Backpack.ServerTraits.EatSenzu:FireServer("")
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end){}
+
+    for useless, mob in ipairs(mobs) do
+        for useless2, v in ipairs(game.workspace.Live:GetChildren()) do
+            if v.Name == mob then
+                if v.Humanoid.Health > 0 then
+                    -- little part of gui here
+                    plr.PlayerGui.HUD.FullSize.Quests.TextLabel.Text = v.Name
+                    local vardist = distance(plr.Character.HumanoidRootPart.Position, v.HumanoidRootPart.Position)
+                    -- ki tracker
+                    coroutine.wrap(function()
+                        while wait() do
+                            if not game.workspace.Live:FindFirstChild(v.Name) then
+                                break
+                            end
+                            for idk, kimove in ipairs(game.workspace:GetChildren()) do
+                                if kimove:FindFirstChild("Ki") and kimove:FindFirstChild("Mesh") then
+                                    kimove.CFrame = v.HumanoidRootPart.CFrame
+                                end
+                            end
+                            for idk, kimove in ipairs(plr.Character:GetChildren()) do
+                                if kimove:FindFirstChild("Ki") and kimove:FindFirstChild("Mesh") then
+                                    kimove.CFrame = v.HumanoidRootPart.CFrame
+                                end
+                            end
+                        end
+                    end){}
+                    repeat
+                        if vardist < 300 then
+                            break
+                        end
+                        twn(plr.Character.HumanoidRootPart, vardist/5000, v.HumanoidRootPart.CFrame)
+                        wait(vardist/5000)
+                    until(distance(plr.Character.HumanoidRootPart.Position, v.HumanoidRootPart.Position) <= 200)
+                    while wait() do
+                        if not game.workspace.Live:FindFirstChild(v.Name) or v.Humanoid.Health <= 0 then
+                            break
+                        end
+                        if plr.Character.Humanoid.Health <= 1 then
+                            wait(5)
+                        end
+                        cam.CameraType = "Scriptable"
+                        cam.Focus = CFrame.new(v.Head.Position)
+                        game.Workspace.CurrentCamera.CFrame = CFrame.new(plr.Character.HumanoidRootPart.Position,Vector3.new(v.HumanoidRootPart.Position.X, plr.Character.HumanoidRootPart.Position.Y, v.HumanoidRootPart.Position.Z)) * CFrame.new(0, 10, 40)
+                        twn(plr.Character.HumanoidRootPart, .1, v.HumanoidRootPart.CFrame * CFrame.new(0, 0, 5))
+                    end
+                end
+            end
+        end
+    end
+end
