@@ -1,16 +1,33 @@
-Move1 = "Chain Destructo Disk"
-Move2 = "Big Bang Kamehameha"
-Move3 = "Anger Rush"
-Move4 = "Blaster Meteor"
-
 
 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/Galaxy5603/MessageAutoTop/main/Message%20TOP", true))()
 
+--[Beerus Animation]--
 
+if _G.Beerus == true then
+    local player = game.Players.LocalPlayer
+    local mouse = player:GetMouse()
+    local Animate
+    local Humanoid = player.Character:FindFirstChild('Humanoid')
+    local Animation = Instance.new("Animation", player.Character)
+      Animation.AnimationId = "rbxassetid://1171558651"
+      Animate = Humanoid:LoadAnimation(Animation)
+      Animate:Play()
+end
+
+--[Whis Animation]--
+
+if _G.Whis == true then
+    local player = game.Players.LocalPlayer
+    local Animate
+    local Humanoid = player.Character:FindFirstChild('Humanoid')
+    local Animation = Instance.new("Animation", player.Character)
+      Animation.AnimationId = "rbxassetid://1040582223"
+      Animate = Humanoid:LoadAnimation(Animation)
+      Animate:Play()
+      end
 
 -----------------
-
 
 
 
@@ -299,7 +316,7 @@ if game.PlaceId == top or game.PlaceId == htop then
         Text = "EZZ BY PASS"}
     )
     ---------------------- from infinite yield hub, ain't mine -----------------------------
-if Shaders == true then
+if _G.Shaders == true then
 local Bloom = Instance.new("BloomEffect")
 Bloom.Intensity = 0.1
 Bloom.Threshold = 0
