@@ -1,0 +1,14 @@
+_G.LostName = " AUTO TOP MADE BY BLK_Galaxie| ADD ME FOR JOINS THE SERV | DS = BLK_Galaxie"
+_G.NiceMessage= "ty for joins the server !! i love you <3 by BLK_Galaxie"
+
+local args = {
+  [1] = _G.LostName,
+  [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(2)
+local args = {
+  [1] = _G.NiceMessage,
+  [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
